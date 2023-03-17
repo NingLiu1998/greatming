@@ -5,7 +5,15 @@ const routes = [
     name: 'notFound',
     path: '/:path(.*)+',
     redirect: {
-      name: 'goods'
+      name: 'index'
+    }
+  },
+  {
+    name: 'index',
+    path: '/index',
+    component: () => import('@/view/index.vue'),
+    meta: {
+      title: '首页'
     }
   },
   {
