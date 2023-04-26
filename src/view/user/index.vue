@@ -1,36 +1,34 @@
 <template>
   <div>
-    <img
-      class="user-poster"
-      src="https://img.yzcdn.cn/public_files/2017/10/23/8690bb321356070e0b8c4404d087f8fd.png"
-    />
+    <img class="user-poster" src="http://cdn2.xintianyuehui.cn/cur/tylogo.webp" />
     <van-row class="user-links">
       <van-col span="6">
         <van-icon name="pending-payment" />
-        待付款
+        生涯
       </van-col>
       <van-col span="6">
         <van-icon name="records" />
-        待接单
+        军营
       </van-col>
       <van-col span="6">
         <van-icon name="tosend" />
-        待发货
+        个人设置
       </van-col>
       <van-col span="6">
         <van-icon name="logistics" />
-        已发货
+        其他游戏
       </van-col>
     </van-row>
 
     <van-cell-group class="user-group">
-      <van-cell icon="records" title="全部订单" is-link />
+      <van-cell icon="records" title="军饷订单" is-link />
+      <van-cell icon="records" title="收货地址" is-link to="/address" />
     </van-cell-group>
 
     <van-cell-group>
-      <van-cell icon="points" title="我的积分" is-link />
-      <van-cell icon="gold-coin-o" title="我的优惠券" is-link />
-      <van-cell icon="gift-o" title="我收到的礼物" is-link />
+      <van-cell icon="points" title="我的军饷" is-link />
+      <van-cell icon="gold-coin-o" title="出勤记录" is-link />
+      <van-cell icon="gift-o" title="获奖记录" is-link />
     </van-cell-group>
   </div>
 </template>

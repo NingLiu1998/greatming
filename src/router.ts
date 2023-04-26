@@ -1,13 +1,42 @@
+import path from 'path'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes = [
+const userRouter = [
   {
-    name: 'notFound',
-    path: '/:path(.*)+',
-    redirect: {
-      name: 'index'
+    name: 'address',
+    path: '/address',
+    component: () => import('@/view/user/address/index.vue'),
+    meta: {
+      title: '收货地址列表'
     }
   },
+  {
+    name: "address-edit",
+    path: "/address/edit",
+    component: () => import('@/view/user/address/edit.vue'),
+    meta: {
+      title: '收货地址编辑'
+    }
+  },
+  {
+    name: 'user',
+    path: '/user',
+    component: () => import('@/view/user/index.vue'),
+    meta: {
+      title: '队员中心'
+    }
+  },
+
+];
+
+const routes = [
+  /*   {
+      name: 'notFound',
+      path: '/:path(.*)+',
+      redirect: {
+        name: '404'
+      }
+    }, */
   {
     name: 'index',
     path: '/index',
@@ -17,11 +46,11 @@ const routes = [
     }
   },
   {
-    name: 'user',
-    path: '/user',
-    component: () => import('@/view/user/index.vue'),
+    name: 'login',
+    path: '/login',
+    component: () => import('@/view/user/login.vue'),
     meta: {
-      title: '会员中心'
+      title: '登录'
     }
   },
   {
@@ -42,8 +71,11 @@ const routes = [
   }
 ]
 
+
+const allRoutes = userRouter.concat(routes);
+
 const router = createRouter({
-  routes,
+  routes:allRoutes,
   history: createWebHashHistory()
 })
 

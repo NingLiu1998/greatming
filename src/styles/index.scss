@@ -1,0 +1,26 @@
+/* 
+写一个按钮写scss样式，按钮颜色是#DC143C，其余随意发挥
+*/
+* {
+    /* 在全局样式中设置所有字体为微软雅黑 */
+    font-family: "Microsoft YaHei", sans-serif;
+    /* 在全局样式中设置文字抗锯齿 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+
+}
+
+.van-nav-bar {
+    //表现出皇家气派
+    background-color: #FFD700;
+    // 搭配黑色文字
+    color: #333333;
+    font-weight: 800;
+}
+
+:root:root {
+    --van-button-primary-background: #DC143C;
+    --van-button-primary-color: #fff;
+    --van-button-border-width: 0;
+}
