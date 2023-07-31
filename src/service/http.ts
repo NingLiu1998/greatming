@@ -1,15 +1,16 @@
 // http.ts
-import type { AxiosResponse } from 'axios'
+import type { AxiosResponse } from 'axios';
 //import qs from "qs"
-import 'element-plus/dist/index.css'
-import { u } from './util'
+// import 'element-plus/dist/index.css';
+import { u } from './util';
 import Request from './req';
-import type { RequestConfig, reqRegisterUserType } from './types';
+import type { RequestConfig, reqRegisterUserType,reqLogin } from './types';
 
 //参考：https://juejin.cn/post/7071518211392405541
 
+console.log("baseUrl",import.meta.env.BASE_URL);
 const request = new Request({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.BASE_URL,
     timeout: 1000 * 60 * 5,
     interceptors: {
         // 请求拦截器
@@ -77,6 +78,15 @@ class api extends baseService {
             params: uInfo
         }).then(res => {
             u.NoticeOk('账号注册成功')
+            console.log('注册', res);
+        });
+    }
+
+    static login = (uInfo: reqLogin) => {
+        this.post('/api/system/login', {
+            params: uInfo
+        }).then(res => {
+            u.NoticeOk('登录成功')
             console.log('注册', res);
         });
     }

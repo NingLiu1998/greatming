@@ -10,7 +10,7 @@
             </van-cell-group>
             <div style="margin: 16px;">
                 <van-button round block type="primary" native-type="submit">
-                    提交
+                    登录
                 </van-button>
             </div>
         </van-form>
@@ -20,6 +20,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { api } from '@/service/http';
+import type { reqRegisterUserType } from '@/service/types';
 const router = useRouter();
 
 interface FormValues {
@@ -35,7 +37,12 @@ const password = ref('');
 
 const onSubmit = (values: FormValues) => {
     console.log('submit', values);
-    router.push('/user/index');
+
+
+    api.login({ name: values.username, pwd: values.password });
+
+
+    //router.push('/user/index');
 };
 
 const title = () => {

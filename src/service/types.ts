@@ -26,6 +26,7 @@ export interface CancelRequestSource {
     [index: string]: () => void
 }
 
+//注册
 export interface reqRegisterUserType {
     name?: string,
     account?: string,
@@ -34,6 +35,13 @@ export interface reqRegisterUserType {
     phone?: string,
     pwd?: string
 }
+
+export interface reqLogin {
+    name: string,
+    pwd: string
+}
+
+
 
 
 export interface resMainMenuType {

@@ -39,12 +39,12 @@ const routes = [
     }, */
   {
     name: 'index',
-    path: '/index',
+    path: '/',
     component: () => import('@/view/index.vue'),
     meta: {
       title: '首页'
     }
-  },
+  },  
   {
     name: 'login',
     path: '/login',
